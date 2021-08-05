@@ -1,0 +1,50 @@
+<html ng-app="ProjetoBethaFrontEnd" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviço de Reparo de Equipamentos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        .jumbotron {
+            width: 400px;
+            height: 100px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+        }
+    </style>
+
+    <script>
+        angular.module("ProjetoBethaFrontEnd", []);
+        angular.module("ProjetoBethaFrontEnd").controller("ProjetoBethaFrontEndCtrl", function ($scope) {
+            $scope.app = "Serviço de Reparo de Equipamentos"
+            $scope.clientes = function() {
+                $http.get("http://localhost:8080/clientes/").success
+            }
+            $scope.servicos = function() {
+                $http.get("http://localhost:8080/ordemdeservicos/").success
+            }
+        });
+
+
+    </script>
+    
+</head>
+
+<body ng-controller="ProjetoBethaFrontEndCtrl">
+    <div class="jumbotron">
+        <h4 ng-bind="app"></h4>
+    </div>
+    <button class="btn btn-primary" ng-click="servicos()">Criar novo Serviço</button>
+    <button ng-click="clientes()">Adicionar novo Cliente</button>
+    <button ng-click="">Login</button>
+</body>
+
+</html>
