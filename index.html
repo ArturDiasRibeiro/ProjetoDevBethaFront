@@ -30,14 +30,19 @@
 <body ng-controller="clienteController">
     
     <div ng-repeat="cli in clientes">
-        {{cli.nome}}
+        {{cli.id}}<br>
+        {{cli.nome}}<br>
+        {{cli.email}}<br>
+        {{cli.telefone}}<br>
     </div>
+
     
     <div class="jumbotron">
         <h4 ng-bind="app"></h4>
     </div>
-    <button class="btn btn-primary" ng-click="servicos()">Criar novo Serviço</button>
-    <button ng-click="clientes()">Adicionar novo Cliente</button>
+    <button class="btn btn-primary" ng-click="servicos()">Serviços</button>
+    <input ng-model="getId" type="number" placeholder="Digite o id do cliente"></input>
+    <button ng-click="loadClientes()">Clientes</button>
     <button ng-click="">Login</button>
 </body>
 
