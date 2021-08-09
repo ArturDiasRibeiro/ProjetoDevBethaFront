@@ -1,9 +1,12 @@
 angular.module("ProjetoBethaFrontEnd").controller("clienteController", function ($scope, clienteService) {
+
     $scope.app = "Clientes"
+
     $scope.clientes = []
     $scope.showClientes = true;
     $scope.showPutCliente = false;
     $scope.showNGShowGetCliente = false;
+
 
     //Get all
     loadClientes = function () {
@@ -11,6 +14,7 @@ angular.module("ProjetoBethaFrontEnd").controller("clienteController", function 
             console.log(response)
             $scope.clientes = response.data
         }).catch(function (error) {
+
             alert(error.data.message)
         })
     } 
@@ -59,4 +63,5 @@ angular.module("ProjetoBethaFrontEnd").controller("clienteController", function 
         this.loadCliente(clienteId)
         $scope.showNGShowGetCliente= true;
     }
+
 })
