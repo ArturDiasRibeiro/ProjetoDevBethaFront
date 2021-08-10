@@ -13,7 +13,7 @@ angular.module("ProjetoBethaFrontEnd").service("funcionarioService", function ($
     }
 
     this.postFuncionario = function (funcionario) {
-        return $http.post(configValue.apiUrl + "/funcionarios" + funcionario)
+        return $http.post(configValue.apiUrl + "/funcionarios", funcionario)
     }
 
     this.deleteFuncionario = function (funcionarioId) {
