@@ -1,6 +1,6 @@
 angular.module("ProjetoBethaFrontEnd").controller("clienteController", function ($scope, clienteService) {
 
-    $scope.app = "Clientes"
+    $scope.app = "Área de Clientes"
 
     $scope.clientes = []
     $scope.showClientes = true

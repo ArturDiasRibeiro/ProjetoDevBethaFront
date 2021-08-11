@@ -19,6 +19,7 @@
                 <tr ng-repeat="cliente in clientes">
                     <td>{{cliente.id}}</td>
                     <td>{{cliente.nome}}</td>
+                    <td>{{cliente.telefone}}</td>
                     <td>{{cliente.email}}</td>
                     <td><button class="btn btn-primary" id="redirectBtnstype" ng-click="showNGShowGetClienteFunction(cliente.id)">Encontrar</button></td>
                     <td><button class="btn btn-primary" id="redirectBtnstype" ng-click="showPutCli(cliente.id)">Alterar</button></td>
@@ -33,7 +34,7 @@
             <form>
                 <input type="text" ng-model="cliente.nome" placeholder="Nome">
                 <input type="text" ng-model="cliente.email" placeholder="Email">
-                <input type="text" ng-model="cliente.telefone" placeholder="Telefone">
+                <input type="text" ng-model="cliente.telefone" placeholder="Telefone" ui-telefone/>
                 <input type="text" ng-model="cliente.endereco" placeholder="Endereço">
             </form>
             <br>
@@ -49,7 +50,7 @@
             <form>
                 <input type="text" ng-model="cliente.nome" placeholder="Nome">
                 <input type="text" ng-model="cliente.email" placeholder="Email">
-                <input type="text" ng-model="cliente.telefone" placeholder="Telefone">
+                <input type="text" ng-model="cliente.telefone" placeholder="Telefone" ui-telefone/>
                 <input type="text" ng-model="cliente.endereco" placeholder="Endereço">
             </form>
             <button class="btn btn-primary" id="redirectBtns" ng-click="postCliente(cliente)">Adicionar Cliente</button>
