@@ -1,0 +1,65 @@
+#background {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: auto;
+    color: black;
+    background-color: black;
+}
+
+.jumbotron {
+    background-color: rgba(180, 252, 252, 0.719);
+    width: 900px;
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#divDeBusca {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1px;
+    border-color: black;
+}
+
+#redirectBtns {
+    height: 40px;
+    width: 400px;
+    background-color: gray;
+    border-radius: 1px;
+    border-color: black;
+}
+
+#redirectBtnstype {
+    height: 40px;
+    width: 150px;
+    background-color: gray;
+    border-radius: 1px;
+    border-color: black;
+}
+
+h4 {
+    background-color: grey;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+select {
+    border: 1px solid #ccc;
+    height: 30px;
+    vertical-align: top;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    vertical-align: top;
+}
