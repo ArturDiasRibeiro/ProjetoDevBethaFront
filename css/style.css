@@ -24,9 +24,7 @@ body {
     color: #000;
 }
 
-#margin8px{
-    margin-left: 8px;
-}
+
 
 button {
     cursor: pointer;
@@ -201,4 +199,8 @@ input {
     max-width: 200px;
     height: 30px;
     vertical-align: top;
+}
+
+#margin8px{
+    margin-left: 8px;
 }

@@ -8,10 +8,19 @@
         <div>
 
             <div>
+                <br>
                 {{cliente}}
+                <br><br>
             </div>
 
             <table class="table table-striped">
+
+                <div id="centerIt">
+                    <input type="number" id="centerIt" ng-model="clienteId" placeholder="Id">
+                    <a class="btn btnTiny" id="centerIt" ng-click="findClienteById(clienteId)">Encontrar</a>
+                        <a class="btn btnTiny" id="centerIt" href="#/clientes/alterarcliente"
+                                ng-click="findClienteById(cliente.id)">Alterar</a>
+                </div>
                 <thead>
                     <tr>
                         <th class="max100">Id</th>
@@ -28,11 +37,12 @@
                         <td class="max150">{{cliente.telefone}}</td>
                         <td class="max225">{{cliente.email}}</td>
                         <td class="colunaIcone">
-                            <button class="btn btnTiny"
-                                ng-click="loadCliente(cliente.id)">Encontrar</button>
-                            <a class="btn btnTiny" id="margin8px" href="#/clientes/alterarcliente" ng-click="loadCliente(cliente.id)">Alterar</a>
-                            <button class="btn btnTiny" id="margin8px"
-                                ng-click="deleteCliente(cliente.id)">Apagar</button>
+
+                            <a class="btn btnTiny" id="margin8px" href="#/clientes/alterarcliente"
+                                ng-click="findClienteById(cliente.id)">Alterar</a>
+
+                            <button class="btn btnTiny" id="margin8px" ng-click="deleteCliente(cliente.id)">Apagar
+                            </button>
                         </td>
                     </tr>
                 </tbody>
