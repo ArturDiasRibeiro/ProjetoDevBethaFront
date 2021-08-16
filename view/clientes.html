@@ -1,62 +1,48 @@
-<div ng-controller="clienteController" id="background">
+<html>
+<div id="root">
 
     <div class="jumbotron">
-        <h4 ng-bind="app"></h4>
+        <h4 ng-bind="app" class="titleOfTheScreen"></h4>
         <br>
 
-        <div ng-if="showClientes">
+        <div>
 
-            <div ng-show="showNGShowGetCliente">
+            <div>
                 {{cliente}}
             </div>
-            
-            <table id="table" class="table table-striped">
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                </tr>
-                <tr ng-repeat="cliente in clientes">
-                    <td>{{cliente.id}}</td>
-                    <td>{{cliente.nome}}</td>
-                    <td>{{cliente.telefone}}</td>
-                    <td>{{cliente.email}}</td>
-                    <td><button class="btn btn-primary" id="redirectBtnstype" ng-click="showNGShowGetClienteFunction(cliente.id)">Encontrar</button></td>
-                    <td><button class="btn btn-primary" id="redirectBtnstype" ng-click="showPutCli(cliente.id)">Alterar</button></td>
-                    <td><button class="btn btn-primary" id="redirectBtnstype" ng-click="deleteCliente(cliente.id)">Apagar</button></td>
-                </tr>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="max100">Id</th>
+                        <th>Nome</th>
+                        <th class="max150">Telefone</th>
+                        <th class="max225">E-mail</th>
+                        <th class="colunaIcone" id="centerIt">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cliente in clientes">
+                        <td class="max100">{{cliente.id}}</td>
+                        <td>{{cliente.nome}}</td>
+                        <td class="max150">{{cliente.telefone}}</td>
+                        <td class="max225">{{cliente.email}}</td>
+                        <td class="colunaIcone">
+                            <button class="btn btnTiny"
+                                ng-click="loadCliente(cliente.id)">Encontrar</button>
+                            <a class="btn btnTiny" id="margin8px" href="#/clientes/alterarcliente" ng-click="loadCliente(cliente.id)">Alterar</a>
+                            <button class="btn btnTiny" id="margin8px"
+                                ng-click="deleteCliente(cliente.id)">Apagar</button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-
-            <button class="btn btn-primary" id="redirectBtns" ng-click="showIfShowPostCliente()">Adicionar novo Cliente</button>
-        </div>
-
-        <div ng-if="showPutCliente">
-            <form>
-                <input type="text" ng-model="cliente.nome" placeholder="Nome">
-                <input type="text" ng-model="cliente.email" placeholder="Email">
-                <input type="text" ng-model="cliente.telefone" placeholder="Telefone" ui-telefone/>
-                <input type="text" ng-model="cliente.endereco" placeholder="Endereço">
-            </form>
             <br>
-            {{cliente}}
-            <br>
-            <br>
-            <button class="btn btn-primary" id="redirectBtns" ng-click="putCliente(cliente)">Alterar Cliente</button>
-            <button class="btn btn-primary" id="redirectBtns" ng-click="showCli()">Voltar</button>
-        </div>
-        <br>
-        <br>
-        <div ng-if="showPostCliente">
-            <form>
-                <input type="text" ng-model="cliente.nome" placeholder="Nome">
-                <input type="text" ng-model="cliente.email" placeholder="Email">
-                <input type="text" ng-model="cliente.telefone" placeholder="Telefone" ui-telefone/>
-                <input type="text" ng-model="cliente.endereco" placeholder="Endereço">
-            </form>
-            <button class="btn btn-primary" id="redirectBtns" ng-click="postCliente(cliente)">Adicionar Cliente</button>
-                <button class="btn btn-primary" id="redirectBtns" ng-click="showCli()">Voltar</button>
+            <a class="btn" id="redirectBtns" href="#/clientes/inserircliente">Adicionar novo cliente</a>
         </div>
 
 
     </div>
 </div>
+
+</html>

@@ -3,12 +3,8 @@ angular.module("ProjetoBethaFrontEnd").controller("clienteController", function 
     $scope.app = "Área de Clientes"
 
     $scope.clientes = []
-    $scope.showClientes = true
-    $scope.showPutCliente = false
-    $scope.showNGShowGetCliente = false
-    $scope.showPostCliente = false
-
-    //get all
+ 
+    //get all Clientes
     loadClientes = function () {
         clienteService.findAll().then(function (response) {
             console.log(response)
@@ -19,17 +15,28 @@ angular.module("ProjetoBethaFrontEnd").controller("clienteController", function 
     }
     loadClientes()
 
-    //get one
+    
+
+    //get one Cliente
     $scope.loadCliente = function (clienteId) {
+        
         clienteService.findOneById(clienteId).then(function (response) {
             $scope.cliente = response.data
             console.log(response.data)
+            
         }).catch(function (error) {
-            alert(error.data.message)
+            //alert(error.data.message)
         })
     }
 
-    //put one
+    //get Cliente Id
+    $scope.getClienteId = function (idString) {
+        let id = parseInt(idString)
+        console.log(id)
+        return id
+    }
+
+    //put Cliente
     $scope.putCliente = function (cliente) {
         clienteService.putCliente(cliente).then(function (response) {
             console.log(response.data)
@@ -58,34 +65,5 @@ angular.module("ProjetoBethaFrontEnd").controller("clienteController", function 
         }).catch(function (error) {
             alert(error.data.message)
         })
-    }
-
-    //mostrar alteração no cliente
-    $scope.showPutCli = function (clienteId) {
-        this.loadCliente(clienteId)
-        $scope.showClientes = false
-        $scope.showPutCliente = true
-        $scope.showPostCliente = false
-    }
-
-    //mostrar area geral de clientes
-    $scope.showCli = function () {
-        $scope.showClientes = true
-        $scope.showPutCliente = false
-        $scope.showPostCliente = false
-    }
-
-    //habilitar ngshow para mostrar função de get cliente
-    $scope.showNGShowGetClienteFunction = function (clienteId) {
-        this.loadCliente(clienteId)
-        $scope.showNGShowGetCliente = true
-        $scope.showPostCliente = false
-    }
-
-    //habilitar a area de post usando ng-If quando for realizar o post de cliente
-    $scope.showIfShowPostCliente = function () {
-        $scope.showClientes = false
-        $scope.showPutCliente = false
-        $scope.showPostCliente = true
     }
 })

@@ -1,0 +1,21 @@
+<html>
+<div id="root">
+
+    <div class="jumbotron">
+
+        {{cliente}}
+        
+        <form id="centerIt">
+            <input type="text" ng-model="cliente.nome" placeholder="Nome">
+            <input type="text" ng-model="cliente.email" placeholder="Email">
+            <input type="text" ng-model="cliente.telefone" placeholder="Telefone">
+            <input type="text" ng-model="cliente.endereco" placeholder="Endereço">
+        </form>
+        <br>
+
+        <a class="btn btnTiny" id="centerIt" ng-click="putCliente(cliente)">Alterar Cliente</a>
+        <a class="btn btnTiny" id="centerIt" href="#/clientes">Voltar</a>
+    </div>
+</div>
+
+</html>

@@ -24,6 +24,10 @@ body {
     color: #000;
 }
 
+#margin8px{
+    margin-left: 8px;
+}
+
 button {
     cursor: pointer;
 }
@@ -169,27 +173,15 @@ td.colunaIcone > button + button {
     max-width: 225px;
 }
 
-/*
-
-
-#redirectBtns {
-    height: 40px;
-    width: 100%;
-    max-width: 400px;
-    background-color: gray;
-    border-radius: 1px;
-    border-color: black;
+.max300 {
+    max-width: 300px;
 }
 
-#redirectBtnstype {
-    height: 40px;
-    width: 100%;
-    max-width: 150px;
-    background-color: gray;
-    border-radius: 1px;
-    border-color: black;
+#centerIt{
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
-*/
 
 h4 {
     color: #000;
